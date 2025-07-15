@@ -89,9 +89,8 @@ This project implements a full deep learning pipeline for detecting helmet usage
 ├── yolov8.py               # Trains YOLOv8 on custom dataset
 ├── SelfTrainedmodel.py     # Inference on a single image
 ├── testvideo.py            # Inference on video stream (e.g. CCTV)
-├── data.yaml               # YOLO training configuration file
 ├── YOLO_helmet_training/   # Output training logs and weights
-├── trained_helmet_model.pt # Exported TorchScript model
+├── yolo8n.pt               # Exported YoloV8 Ultralytics Model
 ```
 
 ### 🔍 1. Dataset Verification — `check.py`
