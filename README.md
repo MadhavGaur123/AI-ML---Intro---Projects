@@ -1,157 +1,163 @@
-# 🤖 AI/ML Mini Projects Collection
+🧠 AI/ML + Computer Vision Projects Portfolio
 
-This repository contains five concise and practical machine learning projects developed using **Python** and popular libraries like **Scikit-learn**, **Pandas**, **NumPy**, and **Matplotlib**. Each project targets a different ML concept: classification, clustering, regression, and NLP-based sentiment analysis.
+This repository showcases a collection of applied AI/ML and deep learning projects, ranging from classification and regression to object detection using YOLOv8. It demonstrates both breadth and depth in ML/AI with real-world datasets and tasks.
+📁 Contents
+Category	Project Name	Description
+Machine Learning	Decision Tree Disease Detection	Heart disease classification
+Machine Learning	Decision Tree Loan Approval	Loan prediction with ROC curve
+Machine Learning	K-Means Customer Segmentation	Customer grouping based on spending
+Machine Learning	Linear Regression Housing Prices	Regression with 3D visualization
+Machine Learning	Sentiment Analysis using TF-IDF	NLP-based review classifier
+Deep Learning	YOLOv8 Helmet Detection System	Object detection (helmet/no-helmet)
+🤖 AI/ML Mini Projects Collection
 
----
+This section contains five concise and practical machine learning projects developed using Python, Scikit-learn, Pandas, NumPy, and Matplotlib.
+🌐 Project List Overview
+Project Name	Technique	Focus
+DecisionTreeDiseaseDetection	Classification	Heart disease prediction
+DecisionTreeLoanApproval	Classification + ROC	Loan approval model with ROC
+K-means-clustering	Unsupervised Clustering	Customer segmentation
+LinearRegressionModel	Regression	Housing price prediction (3D plot)
+SentimentAnalysis	NLP + Classification	Text sentiment analysis (TF-IDF)
+✅ Decision Tree: Disease Detection
 
-## 🌐 Project List Overview
+    Predicts heart disease using features like cholesterol and heart rate.
 
-| Project Name                   | Technique               | Focus                              |
-| ------------------------------ | ----------------------- | ---------------------------------- |
-| `DecisionTreeDiseaseDetection` | Classification          | Heart disease prediction           |
-| `DecisionTreeLoanApproval`     | Classification + ROC    | Loan approval model with ROC       |
-| `K-means-clustering`           | Unsupervised Clustering | Customer segmentation              |
-| `LinearRegressionModel`        | Regression              | Housing price prediction (3D plot) |
-| `SentimentAnalysis`            | NLP + Classification    | Text sentiment analysis (TF-IDF)   |
+    Implements Decision Tree and Random Forest classifiers.
 
----
+    Evaluates with confusion matrix and ROC curve.
 
-## 📊 Decision Tree: Disease Detection
+✅ Decision Tree: Loan Approval with ROC
 
-**Goal:** Predict heart disease using medical attributes.
+    Classifies loan approvals based on structured inputs.
 
-### Features Used:
+    Calculates TPR and FPR manually.
 
-* `chol` (cholesterol level)
-* `oldpeak` (ST depression)
-* `thalach` (maximum heart rate achieved)
+    Plots a pseudo ROC curve.
 
-### Highlights:
+✅ K-Means Clustering: Customer Segmentation
 
-* Uses both **Decision Tree** and **Random Forest** classifiers.
-* Evaluation with **confusion matrix**, **precision**, **recall**, and **ROC-AUC**.
-* Compares the performance visually on the **ROC Curve**.
+    Groups mall customers using annual income and spending score.
 
-### Bonus:
+    Visualizes colored clusters and centroids.
 
-* Model predicts user input via console (commented out for GUI-free testing).
+    Uses Elbow Method for K optimization.
 
----
+✅ Linear Regression: Housing Price Prediction
 
-## 📋 Decision Tree: Loan Approval with ROC
+    Predicts price from square footage and number of bedrooms.
 
-**Goal:** Classify loan approval decisions based on applicant attributes.
+    3D surface plot with real-time regression visualization.
 
-### Features Used:
+    Metrics: R² Score, Mean Squared Error.
 
-* `LoanAmount`
-* Categorical attributes mapped to numerical values (e.g., Gender, Education)
+✅ Sentiment Analysis using TF-IDF
 
-### Highlights:
+    Classifies text reviews as positive or negative.
 
-* Uses a **Decision Tree** classifier.
-* Computes **TPR**, **FPR**, and plots **ROC-like curve** manually.
-* Interactive threshold input to observe classifier performance.
+    Uses TF-IDF vectorization + Logistic Regression.
 
----
+    Includes NLTK preprocessing (lemmatization, stopwords).
 
-## 📊 K-Means Clustering: Customer Segmentation
+🔧 Dependencies
 
-**Goal:** Segment mall customers based on spending behavior.
+Install ML dependencies:
 
-### Features Used:
-
-* `Annual Income`
-* `Spending Score`
-
-### Highlights:
-
-* Applies **Elbow Method** to determine optimal clusters.
-* Visualizes clusters with **different colors** and **centroids**.
-* Uses `k-means++` initialization and `random_state=42` for reproducibility.
-
----
-
-## 📈 Linear Regression: Housing Price Prediction
-
-**Goal:** Predict house prices based on square footage and number of bedrooms.
-
-### Features Used:
-
-* `SqFt`
-* `Bedrooms`
-
-### Highlights:
-
-* Uses **Linear Regression** from Scikit-learn.
-* Evaluated with **R-squared score** and **MSE**.
-* Warns if prediction confidence is low.
-* Includes a beautiful **3D surface plot** with actual data.
-
----
-
-## 🌐 Sentiment Analysis using TF-IDF
-
-**Goal:** Classify product reviews as Positive or Negative.
-
-### Steps Involved:
-
-1. Loads CSV file of textual reviews.
-2. Preprocesses text using:
-
-   * Tokenization
-   * Stopword removal
-   * Lemmatization
-   * Polarity word counting (basic lexicon-based filtering)
-3. Converts processed text into **TF-IDF vectors**.
-4. Trains a **Logistic Regression** model.
-
-### Highlights:
-
-* Evaluates with a **confusion matrix**.
-* Custom test data used to verify sentiment predictions.
-* Can download missing NLTK resources automatically.
-
----
-
-## 📆 Dependencies
-
-* `pandas`
-* `numpy`
-* `scikit-learn`
-* `matplotlib`
-* `nltk`
-
-Install via pip:
-
-```bash
 pip install pandas numpy scikit-learn matplotlib nltk
-```
 
----
+🪖 YOLOv8 Helmet Detection System
 
-## 🚀 How to Run
+This project implements a full deep learning pipeline for detecting helmet usage using YOLOv8. It includes:
 
-Each file is self-contained and can be run directly using Python:
+    Data integrity verification
 
-```bash
-python filename.py
-```
+    Model training
 
-Ensure corresponding CSV files (datasets) are present at the correct path or adjust paths accordingly in the code.
+    Image/video inference
 
----
+    Model export
 
-## 📊 Final Thoughts
+📁 File Structure
 
-These projects illustrate real-world use cases for various ML techniques. They’re ideal for:
+├── check.py                # Dataset sanity check (images ↔ labels)
+├── yolov8.py               # Trains YOLOv8 on custom dataset
+├── SelfTrainedmodel.py     # Inference on a single image
+├── testvideo.py            # Inference on video stream (e.g. CCTV)
+├── data.yaml               # YOLO training configuration file
+├── YOLO_helmet_training/   # Output training logs and weights
+├── trained_helmet_model.pt # Exported TorchScript model
 
-* Students learning ML
-* Demonstrating project work in portfolios
-* Building end-to-end ML pipelines
+🔍 1. Dataset Verification — check.py
 
-Feel free to fork, improve, or build on top of them!
+Ensures all image files have corresponding label .txt files (YOLO format) and vice versa.
 
----
+python check.py
 
-Let me know if you'd like separate detailed `README.md` files for each project in a subfolder structure (`/DecisionTreeDiseaseDetection`, etc.).
+Output:
+
+    ✅ All matched
+
+    🚨 Reports missing labels or images
+
+🧠 2. Model Training — yolov8.py
+
+Trains a YOLOv8 model with the ultralytics library.
+Key Parameters:
+
+    Epochs: 50
+
+    Batch size: 16
+
+    Image size: 640
+
+    Base model: yolov8n.pt
+
+    Project: "YOLO_helmet_training"
+
+python yolov8.py
+
+Output:
+
+    Training logs in /YOLO_helmet_training/
+
+    Best weights exported to TorchScript (trained_helmet_model.pt)
+
+🖼️ 3. Inference on Image — SelfTrainedmodel.py
+
+Loads a .jpg image and runs inference on the trained helmet detection model.
+
+python SelfTrainedmodel.py
+
+    Displays bounding boxes and class labels
+
+    Runs on GPU if available (torch.cuda)
+
+🎥 4. Inference on Video — testvideo.py
+
+Runs real-time detection on video footage and saves annotated output.
+
+python testvideo.py
+
+Features:
+
+    Helmet detection with bounding box and label
+
+    Warning overlay if no helmet is detected
+
+    Output saved as output_helmet_detection.mp4
+
+🧠 Dependencies
+
+Install YOLOv8 and computer vision libraries:
+
+pip install ultralytics torch opencv-python
+
+🏁 Final Thoughts
+
+These projects combine both machine learning fundamentals and modern computer vision techniques into a single repository. They serve as an ideal base for:
+
+    Academic demonstration
+
+    Technical portfolios
+
+    Real-world applications (e.g., safety monitoring, user profiling)
